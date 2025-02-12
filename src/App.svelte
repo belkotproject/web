@@ -1,47 +1,89 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+    import Logo from '/belkot.svg';
 </script>
 
 <main>
-  <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+    <img id="logo" src={Logo} alt="Logo"/>
 
-  <div class="card">
-    <Counter />
-  </div>
+    <form>
+        <h1> Belkot </h1>
+        <label> Username <input type="text" name="username"></label>  
+        <label> Password <input type="password" name="password"></label>
+        <button type="submit"> Log in </button>
+    </form>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
+    <button id="signup"> Sign up </button>
 </main>
 
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
+<style lang="scss">
+    main {
+        width: 100%;
+        height: 100%;
+        background-color: #040404;
+        font-family: 'Courier New', 'monospace';
+        
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }  
+    
+    h1 {
+        font-weight: normal;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+        margin-top: 15px;
+    }
+
+    #logo { height: 100px }
+    
+    form {
+        font-size: 24px;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        
+        label {
+            margin-top: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            input {
+                font-size: 24px;
+                color: white;
+                background: none;
+                border: unset;
+                text-align: center;
+                border-bottom: 1px solid white;
+                border-radius: 5px;
+            }
+        } 
+
+        button {
+            margin-top: 10px;
+            border: unset;
+            border-radius: 5px;
+            height: 40px;
+            font-size: 24px;
+            font-family: 'Courier New', 'monospace';
+            letter-spacing: -1px;
+        }
+    }
+
+    #signup:hover { text-decoration: underline }
+
+    #signup {
+        background: none;
+        border: unset;
+        color: white;
+        font-size: 24px;
+    }
 </style>
